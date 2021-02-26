@@ -6,9 +6,20 @@ const express = require('express');
 const app = express();
 module.exports = app;
 
-//passports
-app.use(passport.initialize());
-app.use(passport.session());
+//serialize deserialize
+passport.serializeUser((user, done) => {
+  try {
+    done(null, user.id);
+  } catch (err) {
+    done(err);
+  }
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+    .then((user) => done(null, user))
+    .catch(done);
+});
 
 //middleware loggging
 app.use(morgan('dev'));
@@ -28,8 +39,12 @@ app.use(
 // you'll of course want static middleware so your browser can request things like your 'bundle.js'
 app.use(express.static(path.join(__dirname, '../public')));
 
+//passports
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Routes ( API )
-//app.use('/api', require('./api'))
+// app.use('/api', require('./api'));
 
 //404
 app.use((req, res, next) =>
