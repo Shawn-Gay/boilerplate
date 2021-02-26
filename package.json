@@ -1,0 +1,51 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "b-w": "webpack -w",
+    "s-s": "nodemon ./server/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.5",
+    "axios": "^0.21.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.3",
+    "connect-session-sequelize": "^6.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "history": "^4.9.0",
+    "morgan": "^1.9.1",
+    "mysql2": "1.4.2",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.0.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "4.8.2",
+    "socket.io": "^2.2.0"
+  }
+}
